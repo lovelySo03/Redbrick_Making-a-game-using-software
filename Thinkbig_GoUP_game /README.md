@@ -15,6 +15,7 @@
 ====================================================================================
 => 집에 와서 코드를 작성하고 다시 구현을 해보니, 잘 작동되었습니다. 
 
+/*
 function Start() {
 	(async () => {
 		const avatar = await REDBRICK.AvatarManager.createDefaultAvatar();
@@ -31,3 +32,4 @@ function Start() {
 		
 	})();
 }
+*/
