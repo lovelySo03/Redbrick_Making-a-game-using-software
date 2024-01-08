@@ -1,4 +1,53 @@
-Where you can play the game 
+// javascript
 
-https://redbrickland.page.link/2abc
+function Start() {
+	(async () => {
+		const avatar = await REDBRICK.AvatarManager.createDefaultAvatar();
+		const camera = WORLD.getObject("MainCamera");
+		const followingCamera = avatar.setFollowingCamera(camera);
+		avatar.setDefaultController();
+		      let count = 180;
+
+    const startbtn = GUI.getObject("pop_imagefont_start_01(bee)")
+    const timerboard = GUI.getObject("button_text_large_white_null(edc)")
+    let box = `
+싸피인 여러분, 
+싸피학원으로 향하는 길에는 다양한 도전이 기다리고 있습니다. 
+180초 안에 도달하여 새로운 지식과 경험을 획득하세요. 
+모두가 여러분을 기다리고 있습니다. 출발!
+`;
+         const boxGUI = GUI.getObject("board_at_a(052)");
+         boxGUI.setText(box);
+         
+         const failGUI = GUI.getObject("casual_a_font_h(b28)");
+         failGUI.hide();
+
+        
+startbtn.onClick(() => {
+    startbtn.hide();
+    boxGUI.hide();
+    const startCount = setInterval(() => {
+        if (count > 0) {
+            count--;
+            timerboard.setText(count);
+        } else {
+            clearInterval(startCount);
+            failGUI.show();
+        }
+    }, 1000);
+});
+    const sound = WORLD.getObject("victory_10(c08)");
+    const successGUI = GUI.getObject("sf_a_font_f(88f)")
+    successGUI.hide();
+    const finishLine = WORLD.getObject("structure_floorbox_001(268)");
+    avatar.onCollide(finishLine, () => {
+    sound.getAudio().play();
+    successGUI.show();
+     
+    })		    
+
+	})();
+}
+
+// https://redbrickland.page.link/2abc
 
