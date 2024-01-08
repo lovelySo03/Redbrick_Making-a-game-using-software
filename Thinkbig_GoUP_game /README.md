@@ -13,9 +13,10 @@
 게임은 아래 주소에서 플레이해보실 수 있습니다. https://redbrickland.page.link/2abc
 
 ====================================================================================
-=> 집에 와서 코드를 작성하고 다시 구현을 해보니, 잘 작동되었습니다. 
 
-/*
+집에 와서 코드를 작성하고 다시 구현을 해보니, 잘 작동되었습니다. 
+
+'''
 function Start() {
 	(async () => {
 		const avatar = await REDBRICK.AvatarManager.createDefaultAvatar();
@@ -32,4 +33,4 @@ function Start() {
 		
 	})();
 }
-*/
+'''
