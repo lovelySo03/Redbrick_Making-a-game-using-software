@@ -16,21 +16,4 @@
 
 집에 와서 코드를 작성하고 다시 구현을 해보니, 잘 작동되었습니다. 
 
-'''
-function Start() {
-	(async () => {
-		const avatar = await REDBRICK.AvatarManager.createDefaultAvatar();
-		const camera = WORLD.getObject("MainCamera");
-		const followingCamera = avatar.setFollowingCamera(camera);
-		avatar.setDefaultController();
-		
-		const tree = WORLD.getObject("nature_fir_005(76d)");
-		
-		avatar.onCollide(tree, () => {
-		    tree.kill();
-		    avatar.go(-15,1,16);
-		})
-		
-	})();
-}
-'''
+
